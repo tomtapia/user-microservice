@@ -8,6 +8,6 @@ VOLUME /tmp
 #ADD target/lib /usr/share/microservice/lib
 # Add the service itself
 ARG JAR_FILE
-ADD target/${JAR_FILE} /usr/share/microservice/${JAR_FILE}
+ADD ${JAR_FILE} /usr/share/microservice/${JAR_FILE}
 
 ENTRYPOINT ["/usr/bin/java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "/usr/share/microservice/${JAR_FILE}"]
